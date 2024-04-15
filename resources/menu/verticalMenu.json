@@ -7,10 +7,40 @@
       "slug": "pages-home"
     },
     {
-      "url": "/page-2",
-      "icon": "menu-icon tf-icons bx bx-file",
-      "name": "Page 2",
-      "slug": "pages-page-2"
+      "url": "/devices",
+      "icon": "menu-icon tf-icons bx bx-devices",
+      "name": "Equipos",
+      "slug": "pages-devices"
+    },
+    {
+      "url": "/sos",
+      "icon": "menu-icon tf-icons bx bx-cog",
+      "name": "Sistemas Operativos",
+      "slug": "pages-sos"
+    },
+    {
+      "url": "/types",
+      "icon": "menu-icon tf-icons bx bxs-printer",
+      "name": "Tipos",
+      "slug": "pages-types"
+    },
+    {
+      "url": "/reports",
+      "icon": "menu-icon tf-icons bx bxs-report",
+      "name": "Reportes",
+      "slug": "pages-reports"
+    },
+    {
+      "url": "/backups",
+      "icon": "menu-icon tf-icons bx bx-data",
+      "name": "Backup",
+      "slug": "pages-backups"
+    },
+    {
+      "url": "/users",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "name": "Usuarios",
+      "slug": "pages-users"
     }
   ]
 }
