@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM railwayapp/php:7.4
 
 LABEL maintainer="Taylor Otwell"
 

@@ -4,7 +4,7 @@ $configData = Helper::appClasses();
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Sistemas Operativos')
+@section('title', 'Equipos')
 
 @section('content')
 @if(session()->has('message'))
@@ -13,8 +13,9 @@ $configData = Helper::appClasses();
     </div>
 @endif
 
-<h4>Sistema Operativos</h4>
-<a href="{{route('sos.create') }}" type="button" class="btn btn-primary mb-2">Crear S.O</a href="{{route('sos.create') }}">
+<h4>Equipos</h4>
+<a href="{{route('devices.create') }}" type="button" class="btn btn-primary mb-2 mr-2">Crear Equipos</a href="{{route('devices.create') }}">
+<a href="{{route('devices.export') }}" type="button" class="btn btn-success mb-2">Exportar a Excel</a href="{{route('devices.create') }}">
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
@@ -25,31 +26,31 @@ $configData = Helper::appClasses();
           <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Version</th>
+            <th>Tipo</th>
             <th>Activo</th>
             <th>Creado en</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-            @foreach ($sos as $so)
+            @foreach ($devices as $device)
             <tr>
-                <td>{{ $so->id }}</td>
-                <td>{{ $so->name }}</td>
-                <td>{{ $so->version }}</td>
+                <td>{{ $device->id }}</td>
+                <td>{{ $device->name }}</td>
+                <td>{{ $device->icon }}</td>
                 <td>
-                  @if ($so->active)
-                  <a href="{{route('sos.switch', $so->id) }}">
+                  @if ($device->active)
+                  <a href="{{route('devices.switch', $device->id) }}">
                   <span class="badge bg-success">Activo</span></a>
                   @else
-                  <a href="{{route('sos.switch', $so->id) }}">
+                  <a href="{{route('devices.switch', $device->id) }}">
                   <span class="badge bg-danger">Inactivo</span></a>
                   @endif
                 </td>
-                <td>{{ $so->created_at }}</td>
+                <td>{{ $device->created_at }}</td>
                 <td>
-                  <a href="{{ route('sos.edit', $so->id) }}">Editar</a> | 
-                  <a href="{{ route('sos.destroy', $so->id) }}">Borrar</a>
+                  <a href="{{ route('devices.edit', $device->id) }}">Editar</a> | 
+                  <a href="{{ route('devices.destroy', $device->id) }}">Borrar</a>
               </td>
             </tr>
             @endforeach

@@ -23,12 +23,14 @@ class types extends Controller
     $request->validate([
       'name' => 'required',
       'description' => 'required',
+      'icon' => 'required',
     ]);
 
     // Crear nuevo Tipo
     $type = new Type();
     $type->name = $request->name;
     $type->description = $request->description;
+    $type->icon = $request->icon;
     $type->save();
     return redirect()->route('types.index')->with('info', 'Tipo Creado correctamente');
   }
@@ -42,12 +44,14 @@ class types extends Controller
   public function update(Request $request, $type_id)
   {
     $request->validate([
-        'name' => 'required',
-        'description' => 'required',
-      ]);
+      'name' => 'required',
+      'description' => 'required',
+      'icon' => 'required',
+  ]);
       $type = Type::find($type_id);
       $type->name = $request->name;
       $type->description = $request->description;  
+      $type->icon = $request->icon;
       $type->save();
       return redirect()->route('types.index')->with('info', 'Tipo Actualizado correctamente');
   }

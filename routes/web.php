@@ -61,6 +61,16 @@ $controller_path = 'App\Http\Controllers';
     Route::get('/sos/switch/{sos_id}', $controller_path . '\pages\SistemasOperativos@switch')->name('sos.switch');
 
 
+    //devices
+    Route::get('/devices', $controller_path . '\pages\Devices@index')->name('devices.index');
+    Route::get('/devices/create', $controller_path . '\pages\Devices@create')->name('devices.create');
+    Route::post('/devices/store', $controller_path . '\pages\Devices@store')->name('devices.store');
+    Route::get('/devices/edit/{devices_id}', $controller_path . '\pages\Devices@edit')->name('devices.edit');
+    Route::put('/devices/update/{devices_id}', $controller_path . '\pages\Devices@update')->name('devices.update');
+    Route::get('/devices/destroy/{devices_id}', $controller_path . '\pages\Devices@destroy')->name('devices.destroy');
+    Route::get('/devices/switch/{devices_id}', $controller_path . '\pages\Devices@switch')->name('devices.switch');
+    Route::get('/devices/export/', $controller_path . '\pages\Devices@export')->name('devices.export');
+
 
     
 });

@@ -23,7 +23,7 @@ $configData = Helper::appClasses();
                   <label for="name" class="form-label" for="basic-icon-default-fullname">Nombre</label>
                   <div class="input-group input-group-merge">
                     <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-                    <input type="text" id="name" name="name" class="form-control" id="basic-icon-default-fullname" placeholder="Nombre del Equipo" />
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre del Equipo" />
                   </div>
                   @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -34,7 +34,7 @@ $configData = Helper::appClasses();
                   <label for="name" class="form-label" for="basic-icon-default-fullname">Versión</label>
                   <div class="input-group input-group-merge">
                     <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-                    <input type="text" id="version" name="version" class="form-control" id="basic-icon-default-fullname" placeholder="Version del Equipo" />
+                    <input type="text" id="version" name="version" class="form-control" placeholder="Version del Equipo" />
                   </div>
                   @error('version')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -45,13 +45,12 @@ $configData = Helper::appClasses();
                   <label for="description" class="form-label" for="basic-icon-default-fullname">Descripción</label>
                   <div class="input-group input-group-merge">
                     <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-                    <input type="text" id="description" name="description" class="form-control" id="basic-icon-default-fullname" placeholder="Descripcion del Equipo" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" />
+                    <input type="text" id="description" name="description" class="form-control" placeholder="Descripcion del Equipo" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" />
                   </div>
                   @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
                 </div>
-
                 
                 <button type="submit" class="btn btn-primary">Guardar</button>
               </form>
