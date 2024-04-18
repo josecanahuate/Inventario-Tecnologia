@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backup;
 use App\Models\Device;
 use App\Models\So;
 use App\Models\Type;
@@ -15,6 +16,7 @@ class HomePage extends Controller
     $n_devices = Device::where('active', true)->count();
     $n_sos = So::where('active', true)->count();
     $n_types = Type::where('active', true)->count();
-    return view('content.pages.pages-home', compact('n_devices', 'n_sos', 'n_types'));
+    $n_backups = Backup::where('status', 'done')->count();
+    return view('content.pages.pages-home', compact('n_devices', 'n_sos', 'n_types', 'n_backups'));
   }
 }

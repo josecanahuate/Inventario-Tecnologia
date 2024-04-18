@@ -71,6 +71,11 @@ $controller_path = 'App\Http\Controllers';
     Route::get('/devices/switch/{devices_id}', $controller_path . '\pages\Devices@switch')->name('devices.switch');
     Route::get('/devices/export/', $controller_path . '\pages\Devices@export')->name('devices.export');
 
+    //backups
+    Route::get('/backups', $controller_path . '\pages\Backups@index')->name('backups.index');
+    Route::get('/backups/create', $controller_path . '\pages\Backups@create')->name('backups.create');
+    Route::get('/backups/delete/{backup_id}', $controller_path . '\pages\Backups@destroy')->name('backups.destroy');
+
 
     
 });
