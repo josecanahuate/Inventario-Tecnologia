@@ -13,7 +13,8 @@ class Users extends Controller
   public function index()
   {
     $users = User::all();
-    return view('content.pages.users', compact('users'));
+    $n_users = User::all()->count();
+    return view('content.pages.users', compact('users', 'n_users'));
   }
 
   public function create() {
@@ -75,6 +76,18 @@ class Users extends Controller
     $user = User::find($user_id);
     $user->delete();
     return redirect()->route('users.index')->with('info', 'Usuario Eliminado correctamente');
+  }
 
+  //cambiando el rol
+  public function switch($user_id) {
+    $user = User::find($user_id);
+    if($user->hasRole('admin')){
+      $user->removeRole('admin');
+      $user->assignRole('user');
+    }else {
+      $user->removeRole('user');
+      $user->assignRole('admin');
+    }  
+      return redirect()->route('users.index');
   }
 }

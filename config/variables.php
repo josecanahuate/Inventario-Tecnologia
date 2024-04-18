@@ -1,9 +1,9 @@
 <?php
   // Variables
   return [
-    "creatorName" => "EL RINCON DE ISMA",
+    "creatorName" => "Tristar Develops",
     "creatorUrl" => "https://me.elrincondeisma.com/",
-    "templateName" => "ERDI",
+    "templateName" => "Tristar",
     "templateSuffix" => "Bootstrap Admin Template",
     "templateVersion" => "1.0.0",
     "templateFree" => true,

@@ -4,7 +4,7 @@ $configData = Helper::appClasses();
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Backups: Disaster Recovery')
+@section('title', 'Reportes')
 
 @section('content')
 @if(session()->has('message'))
@@ -13,9 +13,9 @@ $configData = Helper::appClasses();
     </div>
 @endif
 
-<h4>Backups: Disaster Recovery</h4>
+<h4>Reportes</h4>
 @role('admin')
-<a href="{{route('backups.create') }}" type="button" class="btn btn-primary mb-2">Crear Nuevo Backup</a href="{{route('backups.create') }}">
+<a href="{{route('reports.create') }}" type="button" class="btn btn-primary mb-2">Crear Nuevo Report</a href="{{route('reports.create') }}">
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
@@ -31,14 +31,14 @@ $configData = Helper::appClasses();
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-            @foreach ($backups as $backup)
+            @foreach ($reports as $report)
             <tr>
-                <td>{{ $backup->id }}</td>
-                <td>{{ $backup->status }}</td>
-                <td>{{ $backup->created_at }}</td>
+                <td>{{ $report->id }}</td>
+                <td>{{ $report->status }}</td>
+                <td>{{ $report->created_at }}</td>
                 <td>
-                  <a href="{{ Storage::url($report->url) }}">Download</a> | 
-                  <a href="{{ route('backups.destroy', $backup->id) }}">Borrar</a>
+                  <a href="{{ Storage::url($report->url) }}" target="blank_">Download</a> |
+                  <a href="{{ route('reports.destroy', $report->id) }}">Borrar</a>
               </td>
             </tr>
             @endforeach

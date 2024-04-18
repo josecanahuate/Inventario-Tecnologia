@@ -26,6 +26,7 @@ $configData = Helper::appClasses();
           <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Icono</th>
             <th>Activo</th>
             <th>Creado en</th>
             <th>Acciones</th>
@@ -36,6 +37,7 @@ $configData = Helper::appClasses();
             <tr>
                 <td>{{ $type->id }}</td>
                 <td>{{ $type->name }}</td>
+                <td>{{ $type->icon }}</td>
                 <td>
                   @if ($type->active)
                   <a href="{{route('types.switch', $type->id) }}">
@@ -49,11 +51,6 @@ $configData = Helper::appClasses();
                 <td>
                   <a href="{{ route('types.edit', $type->id) }}">Editar</a> | 
                   <a href="{{ route('types.destroy', $type->id) }}">Borrar</a>
-    {{--               <form action="{{ route('types.destroy', $type->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
-                </form> --}}
               </td>
             </tr>
             @endforeach

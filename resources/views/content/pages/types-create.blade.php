@@ -43,11 +43,11 @@ $configData = Helper::appClasses();
                 <div class="mb-3">
                   <label for="selectpickerIcons" class="form-label">Icono</label>
                   <select class="selectPicker w-100 show-tick form-select" name="icon" id="selectpickerIcons" data-icon-base="bx" data-tick-icon="">
-                      <option value="bx bx-tv" data-icon="bx bx-tv">Monitor</option>
-                      <option value="bx bx-laptop" data-icon="bx bx-laptop">Ordenador</option>
-                      <option value="bx bx-printer" data-icon="bx bx-printer">Impresora</option>
-                      <option value="bx bx-mobile" data-icon="bx bx-mobile">Móvil</option>
-                      <option value="bx bx-hdd" data-icon="bx bx-hdd">Router/Switch</option>
+                      <option value="Monitor" data-icon="bx bx-tv">Monitor<i class='bx bx-laptop'></i></option>
+                      <option value="Ordenador" data-icon="bx bx-laptop">Ordenador</option>
+                      <option value="Impresora" data-icon="bx bx-printer">Impresora</option>
+                      <option value="Móvil" data-icon="bx bx-mobile">Móvil</option>
+                      <option value="Router/Switch" data-icon="bx bx-hdd">Router/Switch</option>
                   </select>
               </div>
 

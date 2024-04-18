@@ -31,6 +31,7 @@ Route::middleware([
 ])->group(function () {
 $controller_path = 'App\Http\Controllers';
 
+    //home
     Route::get('/', $controller_path . '\pages\HomePage@index')->name('pages-home');
     Route::get('/page-2', $controller_path . '\pages\Page2@index')->name('pages-devices');
 
@@ -76,6 +77,14 @@ $controller_path = 'App\Http\Controllers';
     Route::get('/backups/create', $controller_path . '\pages\Backups@create')->name('backups.create');
     Route::get('/backups/delete/{backup_id}', $controller_path . '\pages\Backups@destroy')->name('backups.destroy');
 
+
+    //switch de roles
+    Route::get('/roles/switch/{user_id}', $controller_path . '\pages\Users@switch')->name('users.switch-role');
+
+    //reports
+    Route::get('/reports', $controller_path . '\pages\Reports@index')->name('reports.index');
+    Route::get('/reports/create', $controller_path . '\pages\Reports@create')->name('reports.create');
+    Route::get('/reports/delete/{report_id}', $controller_path . '\pages\Reports@destroy')->name('reports.destroy');
 
     
 });
